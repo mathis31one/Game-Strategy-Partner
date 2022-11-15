@@ -8,7 +8,8 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-import About from "./components/about";
+import About from "./components/About";
+import Upper from "./components/Upper";
 
 function App() {
   const router = createBrowserRouter([
@@ -27,7 +28,14 @@ function App() {
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  const [game, setGame] = React.useState("");
+
+  return (
+    <>
+      <Upper game={game} setGame={setGame} />
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
 export default App;
